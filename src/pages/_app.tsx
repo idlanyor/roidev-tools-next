@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Salvia-kit Dashboard V5</title>
+        <title>Roidev Tools</title>
       </Head>
       <DashboardLayout>
         <Component {...pageProps} />
