@@ -25,18 +25,19 @@ export function Content(props: ContentProps) {
 
   useEffect(() => {
     if (query) {
-      const apiUrl = `https://api.lolhuman.xyz/api/ytvideo?apikey=roiwithzakiya&url=${query}`;
+      const apiUrl = `https://api.lolhuman.xyz/api/ytplay?apikey=${process.env.APIKEY}&query=${query}`;
 
       fetchVideoData(apiUrl).then((data) => {
-        if (data) {
-          setVideoData(data.result);
-        }
+        // if (data) {
+          setVideoData(data);
+        // }
       });
     }
   }, [query]);
 
   const onSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
     const input = e.currentTarget[0].value;
     setQuery(input);
   };
